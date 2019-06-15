@@ -1,0 +1,49 @@
+{% extends 'fitness/base.html' %}
+
+
+{% block title %}
+
+	Weight Statistics
+
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+	<br><br>
+	
+	<div class="center-align">Your Weight Statistics</div>
+	<br>
+	Maximum Weight This Week : <span id='maxGain'></span>
+	<br><br>
+
+<div class="row">
+		
+		<div class="col-md-6">
+			<div style="height: 400px;width: 400px;">
+				<canvas id="myChart" width="400" height="400"></canvas>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div style="height: 400px;width: 400px;">
+				<canvas id="monthlyChart" width="400" height="400"></canvas>
+			</div>
+		</div>
+	
+	</div>
+
+	<a href="{% url 'fitness:index' %}">Go Back</a>
+
+</div>
+	
+{% endblock %}
+
+
+
+{% block jQuery %}
+	{% load static %}
+
+	<script type="text/javascript" src="{% static 'fitness/custom.js' %}"></script>
+{% endblock %}

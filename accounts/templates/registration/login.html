@@ -1,0 +1,40 @@
+{% extends 'fitness/base.html' %}
+
+{% block title %}
+	lOGIN-pAGE
+{% endblock %}
+
+
+{% block body %}
+
+	{% load static %}
+	{% load crispy_forms_tags %}
+
+<div class="container-fluid padding-left-0 no-margin">
+	<div class="row">
+<div class='col-md-4'>
+	<div class="login-div">
+		<div  class="login-form">
+	<form action="{% url 'accounts:login' %}" method="POST">
+		{% csrf_token %}
+		{{form|crispy}}<hr>
+		<input type="Submit" value="LOGIN" class="btn btn-login btn-sm">
+	</form>
+</div>
+	</div>
+</div>
+<div class="col-md-8">
+	<div class="relative-block">
+		<img src="{% static 'fitness/earn_body.jpg' %}" class="img-fluid front-img" id='earn_body'>
+		<img src="{% static 'fitness/earn_body.jpg' %}" class="img-fluid front-img" id='back_frame'>
+		<img src="{% static 'fitness/earn_jeal.jpg' %}" class="img-fluid front-img" id='back_frame2'>
+		<img src="{% static 'fitness/earn_jeal.jpg' %}" class="img-fluid front-img" id='earn_jeal'>
+	</div>
+</div>
+</div>
+</div>
+{% endblock %}
+
+{% block jQuery %}
+
+{% endblock %}

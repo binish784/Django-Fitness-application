@@ -1,0 +1,58 @@
+	{% extends 'fitness/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+	
+	Index - Page
+
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+	<br><br>
+	<div class="row">
+		<div class="col-md-6">
+			Welcome to my Fitness Record
+			<div class="row">
+				<div class="col-md-10">
+					<br>
+					{% if form %}
+					<form method="POST" action="{% url 'fitness:index' %}">
+						{% crispy form %}
+					</form>
+					<br>
+					Weight Yesterday : 
+					{% for weight in recent_weight %}
+						{{weight}} 
+					{% endfor %}
+		
+					{% else %}
+					
+					Current Weight :
+					{% for weight in recent_weight %}
+						{{weight}} 
+					{% endfor %}
+				
+					{% endif %}
+				<a href='{% url "fitness:weight-statistics" %}'>See Statistics</a>
+				</div>
+			</div>
+		
+		</div>
+
+		<div class="col-md-6">
+
+			<a href="{% url 'fitness:set-workout' %}">Manage Your Workouts</a><hr>
+			<a href="{% url 'log:index' %}">Make a log entry</a>
+
+		</div>
+
+	</div>
+</div>
+
+{% endblock %}
+
+{% block jQuer		

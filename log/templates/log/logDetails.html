@@ -1,0 +1,51 @@
+{% extends 'fitness/base.html' %}
+
+{% load static %}
+
+{% block title %}
+	Log Details
+{% endblock %}
+
+
+{% block body %}
+
+
+	
+<div class="container">
+	<br><br>
+	<div class="row">
+		<div class="col-md-3">
+	
+		<input type="hidden" id='logDesc' value="{{log.id}}">
+			<select id='setSelection' class="form-control">
+		
+			</select>
+
+<br>
+		<select id="exerciseSelection" class="form-control"></select><br>
+		<input type="number" id='num_of_set' placeholder="Number of sets" min=1 required class='form-control'><br>
+		<input type="number" id='num_of_reps' placeholder="Number of Reps" min=1 required class='form-control'><br>
+		<input type="number" id='weights_used' placeholder="Weights used" min=2.5 step=2.5 required class='form-control'><br>
+		<input type="button" id='logCreation' value="Record" class="btn btn-primary">
+ 		&nbsp;&nbsp;&nbsp;<a href="{% url 'log:index' %}" class="btn btn-default">Go Back</a>
+		</div>
+
+		<div class="col-md-8 offset-md-1">
+			Log Record :<span id='logDate'> {{log.created_on}}</span> 
+			<br><br>
+			<ul class="list-group list-group-flush logList">
+			</ul>
+
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+
+{% block jQuery %}
+
+	<script type="text/javascript" src="{% static 'log/safeAjax.js' %}"></script>
+	<script type="text/javascript" src="{% static 'log/logDetailsForm.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+<div>
+
+<div class="container-fluid nav-custom">
+	<div class="container">
+	<div class="row">
+			<div class="col-md-5">
+			{% if user.is_authenticated %}
+				<a href='{% url "fitness:profile" %}' class=" white-grey">Username :{{user.username}}</a>
+			{% else %}
+				<a href="/accounts/login" class=" white-grey">Login</a>
+			{% endif %}
+			</div>
+			
+			<div class="col-md-2 ">
+				<a href="{% url 'fitness:index' %}" class="white-grey">Work-That-Body</a>
+			</div>
+
+
+			{% if user.is_authenticated %}
+				<div class="col-md-2 offset-md-3">
+					<a href="/accounts/logout" class=" white-grey">Logout</a>
+				</div>	
+			{% endif %}
+		</div>
+	</div>	
+	</div>
+</div>
+
+</div>

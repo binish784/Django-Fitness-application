@@ -1,0 +1,47 @@
+{% extends 'fitness/base.html' %}
+
+{% load crispy_forms_tags %}
+{% block title %}
+	Set Work-Out
+{% endblock %}
+
+
+{% block body %}
+<br><br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 offset-md-2">
+		<form action="" method="POST">
+			Create a new workout set<br><br>
+			{% crispy form %}
+		</form>
+		</div>
+	</div>
+
+<br>
+
+{% if sets %}
+
+
+Available Workouts :<br><br>
+<ul>
+{% for set in sets %}
+	<a href="{{set.get_absolute_url}}"><li>{{set}}</li></a><br>
+{% endfor %}
+</ul>
+
+{% else %}
+
+No Workouts currently available 
+<br><br>
+{% endif %}
+
+<a href="{% url 'fitness:index' %}">Go Back</a>
+
+</div>
+{% endblock %}
+
+{% block jQuery %}
+
+
+{% endblock %}

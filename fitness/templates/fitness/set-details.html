@@ -1,0 +1,50 @@
+{% extends 'fitness/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+	Set Details
+{% endblock %}
+
+
+{% block body %}
+	
+<div class="container">
+<br><br>
+	Workout Name : {{selected_set}}&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'fitness:set-workout' %}">Go Back</a>
+<br><br>
+	
+<form method="POST" action="">
+	{% crispy form %}
+</form>
+
+<hr>
+
+{% if selected_set.workout_set.all %}
+
+<br>Workouts in this set:<br><br>
+<ul>
+{% for workout in selected_set.workout_set.all %}
+	<a href="{% url 'fitness:detail-workout' workout.id %}"><li>{{workout}}</li></a>
+{% endfor %}
+</ul>
+
+{% else %}
+<br><br>
+
+There are no workouts currently in this set.<br><br>
+
+
+
+{% endif %}
+
+
+</div>
+
+
+
+{% endblock %}
+
+{% block jQuery %}
+
+{% endblock %}

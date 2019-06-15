@@ -1,0 +1,77 @@
+{% extends 'fitness/base.html' %}
+
+{% block title %}
+	{{user}}
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+	<br><br>
+	{{user.username}} : <a href="{% url 'fitness:updateProfile' %}">Update profile</a>
+	<hr>
+	Profile Details:<br>
+	<br>
+
+	<div class="row">
+		<div class="col-md-6">
+		{% if user.profile.image%}
+			<img src="{{user.profile.image.url}}" height="200px" width="200px">
+		{% else %}
+			No Picture available
+		{% endif %}
+				<br><br>
+			Base Weight : 
+				{% if user.profile.base_weight %}
+					{{user.profile.base_weight}}
+				{% else %}
+					Not avialable
+				{% endif %}
+	<br><br>
+			Base Height :
+				{% if user.profile.base_height %}
+				 {{user.profile.base_height}}
+				{% else %}
+					Not available
+				{% endif %}
+		</div>
+		<div class="col-md-6">
+			<br>Username:{{user}}
+			<br><br>Email:
+			{% if user.email %}	
+				{{user.email}}
+			{% else%}
+				Not available
+			{% endif %}
+
+			<br><br>Birth-Date:
+			{% if user.profile.birth_date %}
+				{{user.profile.birth_date}}
+			{% else %}
+				Not avialable
+			{% endif %}
+			<br><br>
+			Bio :
+			{% if user.profile.bio %}
+				{{user.profile.bio}}
+			{% else %}
+				Not avialable
+			{% endif %}
+		 </div>
+	</div>
+	
+
+	<br><br>
+	<a href="{% url 'fitness:index'%}">Go Home</a>
+
+
+
+</div>
+
+	
+{% endblock %}
+
+{% block jQuery %}
+
+{% endblock %}

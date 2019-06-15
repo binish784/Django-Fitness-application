@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+
+		{% block title %}
+		{% endblock %}
+
+	</title>
+
+	{% load static %}
+
+	<link rel="stylesheet" type="text/css" href="{% static 'fitness/bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'fitness/style.css' %}">
+
+
+</head>
+<body>
+
+
+	{% include 'fitness/navigation.html' %}
+
+	{% block body %}
+
+	{% endblock %}
+
+
+<script type="text/javascript" src="{% static 'fitness/jQuery.js' %}"></script>
+<script type="text/javascript" src="{% static 'fitness/bootstrap.js' %}"></script>
+<script type="text/javascript" src="{% static 'fitness/chart.js' %}"></script>
+
+	{% block jQuery %}
+
+	{% endblock %}
+
+</body>
+</html>

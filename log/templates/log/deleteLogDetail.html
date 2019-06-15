@@ -1,0 +1,31 @@
+{% extends 'fitness/base.html' %}
+
+{% block title %}
+
+{% endblock %}
+
+
+{% block body %}
+	Confirm Deletion
+<br><br>
+Confirmation required for deletion :
+<br><br>
+
+
+<form method="POST" action="">
+	{% csrf_token %}
+	Workout Name : {{record}}<br>
+	Number of Sets : {{record.num_of_sets}}<br>
+	Number of Reps : {{record.reps}}<br>
+	Weight Used : {{record.weight_used}}<br><br>
+	<input type="submit" value="Confirm">&nbsp;&nbsp;&nbsp;
+	<a href="{{record.parent_log.get_absolute_url}}">Go Back</a>
+</form>
+
+
+{% endblock %}
+
+{% block jQuery %}
+
+
+{% endblock %}

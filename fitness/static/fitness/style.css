@@ -1,0 +1,124 @@
+.nav-custom{
+	padding: 10px;
+	background-color: #294e5e;
+}
+
+.center-align{
+	text-align: center;
+}
+
+.custom-table td{
+ padding: 0px;
+}
+
+.custom-table th{
+ padding: 0px;
+}
+
+
+.updateField{
+	display: none;
+}
+
+.logRow:hover .updateField{
+	display: block;
+}
+
+.center-align{
+	text-align: center;
+}
+
+.padding-0{
+	padding: 0px;
+}
+
+.auto-margin{
+	margin: auto;
+}
+
+.grey-white{
+	color: grey;
+}
+
+.grey-white:hover{
+	color: white;
+	text-decoration: none;
+}
+
+.white-grey{
+	color: white;
+}
+
+.white-grey:hover{
+	color: grey;
+	text-decoration: none;
+}
+
+
+.login-div {
+
+	background-color: #d7d7d7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 93vh;
+}
+
+.login-form{
+	text-align: left;
+}
+
+.relative-block{
+	position: relative;
+	padding:  50px;
+}
+
+#earn_body{
+}
+
+#back_frame{
+	transform: rotateZ(10deg);	
+}
+
+#earn_jeal{
+	margin-top: 200px ;
+	margin-left: 250px ;
+	transform: rotateZ(-10deg);
+}
+
+#back_frame2{
+	margin-top: 200px ;
+	margin-left: 250px ;
+	transform: rotateZ(-18deg);
+}
+
+.no-margin{
+	margin: 0px; 
+}
+
+.padding-left-0{
+	padding-left:0px;
+}
+
+.front-img{
+	max-height: 350px;
+	max-width: 450px;
+	position: absolute;
+	border: 5px grey solid;
+}
+
+.btn-login{
+	background-color: #14262e;
+	color: white;
+	padding-left: 25px;
+	padding-right: 25px;
+	border: 1px black solid;
+}
+
+.btn-login:hover{
+	background-color: #3b7087;
+	color: #68eee0; 
+	border: 1px white solid;
+}

@@ -1,0 +1,60 @@
+{% extends 'fitness/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+	Update-Profile
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+	<br><br>
+	Update Your Profile<br><br>
+
+<form action="" method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	<div class="row">
+		<div class="col-md-4">{{user_form.username|as_crispy_field}}</div>
+		<div class="col-md-4">{{user_form.first_name|as_crispy_field}}</div>
+		<div class="col-md-4">{{user_form.last_name|as_crispy_field}}</div>
+	</div>
+
+
+
+	<div class="row">
+		<div class="col-md-6">
+			{{user_form.email|as_crispy_field}}
+			{{ profile_form.birth_date|as_crispy_field }}
+			{{ profile_form.image|as_crispy_field }}
+
+				<div class="row">
+					<div class="col-md-6">
+						{{ profile_form.base_weight|as_crispy_field }}
+					</div>
+					<div class="col-md-6">
+						{{ profile_form.base_height|as_crispy_field }}
+					</div>
+				</div>
+
+				<br><br>
+		</div>
+		<div class="col-md-6">
+			{{profile_form.bio|as_crispy_field}}
+				<input type="submit" value="Update Profile" class="btn btn-primary" >
+				<a href="{% url 'fitness:profile' %}" class='btn btn-default'>Go Back</a>
+		</div>
+	</div>
+</form>			
+		
+
+
+</div>
+
+	
+{% endblock %}
+
+{% block jQuery %}
+
+{% endblock %}
